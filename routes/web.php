@@ -2,9 +2,17 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\View\Components\Home;
+
+/*Route::get('/', function () {
+    return view('welcome');
+});*/
+
+//Route::get('home', Home::class);
 
 Route::get('/', function () {
-    return view('welcome');
+    $homeComponent = new Home();
+    return $homeComponent->render();
 });
 
 Route::get('/dashboard', function () {
